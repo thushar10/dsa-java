@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'dsa'
+version = '1.0-SNAPSHOT'
+
+java {
+    toolchain {
+        // Set to Java 17 as you requested
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit 5 for testing
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+
+test {
+    useJUnitPlatform()
+    // Shows test results clearly in the console
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+    }
+}
