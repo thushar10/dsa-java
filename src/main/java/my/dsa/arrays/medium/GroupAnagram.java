@@ -29,15 +29,16 @@ public class GroupAnagram {
 
       String key = new String(arr); // canonical form
 
-      if(grouped.containsKey(key)) {
-        List<String> strings = grouped.get(key);
-        strings.add(strs[i]);
-        grouped.put(key, strings);
-      }else {
-        List<String> list = new ArrayList<>();
-        list.add(strs[i]);
-        grouped.put(key, list);
-      }
+      grouped.computeIfAbsent(key, k -> new ArrayList<>()).add(strs[i]);
+//      if(grouped.containsKey(key)) {
+//        List<String> strings = grouped.get(key);
+//        strings.add(strs[i]);
+//        grouped.put(key, strings);
+//      }else {
+//        List<String> list = new ArrayList<>();
+//        list.add(strs[i]);
+//        grouped.put(key, list);
+//      }
 
     }
     return grouped.values().stream().toList();
