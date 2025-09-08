@@ -11,19 +11,16 @@ public class LongestCommonPreFix {
       }else if(strs.length == 1) {
         return strs[0];
       }else {
-
+      "flower".substring(0, 1);
         String firstWord = strs[0];
-        for(int i= 0; i< firstWord.length(); i++) {
-          int count = 0;
-          for(int j = 1; j< strs.length; j++) {
-            if(strs[j].startsWith(firstWord.substring(0, i))) {
-              count ++;
-            }
-          }
-          if(count == strs.length-1) {
-            commonPrefix = firstWord.substring(0, i);
-          }
-
+        outer: for(int i= 0; i< firstWord.length(); i++) {
+                  for(int j = 1; j< strs.length; j++) {
+                    if(strs[j].startsWith(firstWord.substring(0, i+1))) {
+                      commonPrefix = firstWord.substring(0, i);
+                    }else {
+                      break outer;
+                    }
+                  }
         }
 
 
