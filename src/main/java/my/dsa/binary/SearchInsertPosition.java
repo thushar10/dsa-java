@@ -5,7 +5,7 @@ public class SearchInsertPosition {
   public static void main(String[] args) {
 
     SearchInsertPosition searchInsertPosition = new SearchInsertPosition();
-    int i = searchInsertPosition.searchInsert(new int[]{1, 3, 5, 6}, 7);
+    int i = searchInsertPosition.searchInsert(new int[]{1, 3, 5, 6}, 2);
     System.out.println(i);
   }
 
